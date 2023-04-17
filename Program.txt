@@ -1,0 +1,62 @@
+Encoding message
+
+def caesar_cipher(text, shift):
+    # Create a dictionary to map each character to its shifted counterpart
+    shifted_dict = {}
+    for i in range(256):
+        shifted_dict[chr(i)] = chr((i + shift) % 256)
+
+    # Add special characters to the dictionary
+    shifted_dict[" @"] = "@ "
+    shifted_dict["."] = "."
+    shifted_dict[","] = ","
+    shifted_dict["!"] = "!"
+    shifted_dict["%"] = "%"
+    shifted_dict["$"] = "$"
+    shifted_dict["#"] = "#"
+
+    # Apply the shift to each character in the input text
+    ciphered_text = ""
+    for char in text:
+        ciphered_text += shifted_dict[char]
+
+    return ciphered_text
+
+# Example usage
+plaintext = "Gupta is good boy i like his guts"
+shift = 8
+encoded = caesar_cipher(plaintext, shift)
+print(encoded)
+
+
+
+DECODE MESSAGE
+
+def caesar_cipher(text, shift):
+    # Create a dictionary to map each character to its shifted counterpart
+    shifted_dict = {}
+    for i in range(256):
+        shifted_dict[chr(i)] = chr((i + shift) % 256)
+
+    # Add special characters to the dictionary
+    shifted_dict[" @"] = "@ "
+    shifted_dict["."] = "."
+    shifted_dict[","] = ","
+    shifted_dict["!"] = "!"
+    shifted_dict["%"] = "%"
+    shifted_dict["$"] = "$"
+    shifted_dict["#"] = "#"
+
+    # Apply the shift to each character in the input text
+    ciphered_text = ""
+    for char in text:
+        ciphered_text += shifted_dict[char]
+
+    return ciphered_text
+
+# Example usage
+plaintext = "O}x|i(q{(owwl(jw(q(tqsm(pq{(o}|{"
+shift = 8
+
+decoded = caesar_cipher(plaintext, -shift)
+print(decoded)
